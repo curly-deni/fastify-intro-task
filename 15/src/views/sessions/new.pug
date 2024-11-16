@@ -1,0 +1,17 @@
+extends ../layout/page.pug
+
+block content
+    if flash
+        each message in flash
+            .alert(class=`alert-${message.type}`)
+                = message
+
+    form(action='/sessions', method='POST')
+        div
+            label(for='username') Имя пользователя
+            input#username(type='text', name='username', required)
+        div
+            label(for='password') Пароль
+            input#password(type='password', name='password', required)
+        div
+            button(type='submit') Войти

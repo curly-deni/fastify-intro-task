@@ -1,0 +1,7 @@
+html
+body
+    h1= Users
+    each user in users
+        p= user.username
+        p= user.email
+        a(href=`/users/${user.id}`)= Edit
